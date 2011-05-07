@@ -1,0 +1,58 @@
+* Summary *
+
+Publisher lets you hook in to variables with your own subscriber functions, so that your functions can take action before or after the variable is set (or read).  It uses JavaScript getters and setters, and therefore won't work in older browsers.
+
+
+* Example usage *
+
+<script type="text/javascript" src="publisher.js"></script>
+<script type="text/javascript">
+  var beforeChange = function(before, after) { console.log("[beforeChange] Changing from " + before + " to " + after);};
+  var afterChange = function(before, after) { console.log("[afterChange] Changed from " + before + " to " + after);};
+  var beforeSet = function(before, after) { console.log("[beforeSet] Setting from " + before + " to " + after)};
+  var afterSet = function(before, after) { console.log("[afterSet] Set from " + before + " to " + after);};
+  var onGet = function(value) { console.log("[onGet] Getting value " + value);};
+  
+  Publisher("x")
+    .beforeChange(beforeChange)
+    .afterChange(afterChange)
+    .beforeSet(beforeSet)
+    .afterSet(afterSet)
+    .onGet(onGet)
+    .set("first");
+  
+  x;
+  x = "second";
+  x;
+  x = "second";
+  x;
+  x = "third";
+  x;
+</script>
+
+
+* Output *
+
+[beforeChange] Changing from undefined to first
+[beforeSet] Setting from undefined to first
+[afterChange] Changed from undefined to first
+[afterSet] Set from undefined to first
+[onGet] Getting value first
+[beforeChange] Changing from first to second
+[beforeSet] Setting from first to second
+[afterChange] Changed from first to second
+[afterSet] Set from first to second
+[onGet] Getting value second
+[beforeSet] Setting from second to second
+[afterSet] Set from second to second
+[onGet] Getting value second
+[beforeChange] Changing from second to third
+[beforeSet] Setting from second to third
+[afterChange] Changed from second to third
+[afterSet] Set from second to third
+[onGet] Getting value third
+
+
+* License *
+
+See the LICENSE file.

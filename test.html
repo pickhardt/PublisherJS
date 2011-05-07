@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Publisher test page</title>
+  </head>
+  <body>
+    <script type="text/javascript" src="publisher.js"></script>
+    <script type="text/javascript">
+      var beforeChange = function(before, after) { console.log("[beforeChange] Changing from " + before + " to " + after);};
+      var afterChange = function(before, after) { console.log("[afterChange] Changed from " + before + " to " + after);};
+      var beforeSet = function(before, after) { console.log("[beforeSet] Setting from " + before + " to " + after)};
+      var afterSet = function(before, after) { console.log("[afterSet] Set from " + before + " to " + after);};
+      var onGet = function(value) { console.log("[onGet] Getting value " + value);};
+      
+      Publisher("x")
+        .beforeChange(beforeChange)
+        .afterChange(afterChange)
+        .beforeSet(beforeSet)
+        .afterSet(afterSet)
+        .onGet(onGet)
+        .set("first");
+      
+      x;
+      x = "second";
+      x;
+      x = "second";
+      x;
+      x = "third";
+      x;
+    </script>
+  </body>
+</html>

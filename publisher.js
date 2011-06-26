@@ -1,8 +1,7 @@
 (function() {
   /** @license Publisher
-  (c) Copyright 2011 Jeff Pickhardt. All Rights Reserved. 
+  Released under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
   Made by Jeff Pickhardt <{{ my last name }}@gmail.com>
-  Contact me if you are interested in using Publisher in a project.
   */  var Publisher, root;
   var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; }, __slice = Array.prototype.slice;
   if (typeof window !== "undefined") {

@@ -1,7 +1,6 @@
 ###* @license Publisher
-(c) Copyright 2011 Jeff Pickhardt. All Rights Reserved. 
+Released under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
 Made by Jeff Pickhardt <{{ my last name }}@gmail.com>
-Contact me if you are interested in using Publisher in a project.
 ###
 
 if typeof window != "undefined"

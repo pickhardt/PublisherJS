@@ -1,12 +1,17 @@
-* Summary *
+Summary
+=======
 
-Publisher lets you hook in to variables with your own subscriber functions, so that your functions can take action before or after the variable is set (or read).  It uses JavaScript getters and setters, and therefore won't work in older browsers.
+Publisher was inspired by a question: what if a programming language let variables followed the [subscriber-publisher](http://en.wikipedia.org/wiki/Publish/subscribe) design pattern?
 
+The resulting project, Publisher, lets you hook in to variables with your own subscriber functions.  This allows your functions to take action before or after the variable is read, set, or changed.  It uses JavaScript getters and setters, and therefore won't work in older browsers. For best results, use Chrome or Firefox.
 
-* Example usage *
+It is intended as a proof-of-concept that may inspire something new.  If you decide to use it in a real project, please contact me.  I'd be interested in learning how its used.
 
-<script type="text/javascript" src="publisher.js"></script>
-<script type="text/javascript">
+Example usage
+-------------
+
+(first include the publisher.js script)
+~~~ javascript
   var beforeChange = function(before, after) { console.log("[beforeChange] Changing from " + before + " to " + after);};
   var afterChange = function(before, after) { console.log("[afterChange] Changed from " + before + " to " + after);};
   var beforeSet = function(before, after) { console.log("[beforeSet] Setting from " + before + " to " + after)};
@@ -28,11 +33,12 @@ Publisher lets you hook in to variables with your own subscriber functions, so t
   x;
   x = "third";
   x;
-</script>
+~~~~
 
 
-* Output *
+Output
 
+~~~
 [beforeChange] Changing from undefined to first
 [beforeSet] Setting from undefined to first
 [afterChange] Changed from undefined to first
@@ -51,8 +57,9 @@ Publisher lets you hook in to variables with your own subscriber functions, so t
 [afterChange] Changed from second to third
 [afterSet] Set from second to third
 [onGet] Getting value third
+~~~
 
+License
+-------
 
-* License *
-
-See the LICENSE file.
+Released under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).

@@ -1,8 +1,7 @@
 /*
  Publisher
- (c) Copyright 2011 Jeff Pickhardt. All Rights Reserved. 
+ Released under the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
  Made by Jeff Pickhardt <{{ my last name }}@gmail.com>
- Contact me if you are interested in using Publisher in a project.
 */
 (function(){var c,e=function(b,a){return function(){return b.apply(a,arguments)}},f=Array.prototype.slice;typeof window!=="undefined"?(c=window,c.exports=c):c=global;exports.Publisher=function(){function b(a,g){var d;if(this instanceof b){if(g==null)throw"Publisher must NOT be called with the new keyword.";this.name=a;this.value=void 0;this.afterChangeSubscribers=[];this.beforeChangeSubscribers=[];this.onGetSubscribers=[];this.afterSetSubscribers=[];this.beforeSetSubscribers=[];return this}else{if(this._publisherStash==
 null)this._publisherStash={};this._publisherStash[a]=new b(a,!0);typeof(d=this.Object).defineProperty=="function"&&d.defineProperty(this,a,{get:e(function(){return this._publisherStash[a].get()},this),set:e(function(b){return this._publisherStash[a].set(b)},this)});return this._publisherStash[a]}}b.prototype.afterChange=function(a){this.afterChangeSubscribers.push(a);return this};b.prototype.beforeChange=function(a){this.beforeChangeSubscribers.push(a);return this};b.prototype.onGet=function(a){this.onGetSubscribers.push(a);

@@ -11,7 +11,8 @@ Example usage
 -------------
 
 (first include the publisher.js script)
-~~~ javascript
+
+~~~
   var beforeChange = function(before, after) { console.log("[beforeChange] Changing from " + before + " to " + after);};
   var afterChange = function(before, after) { console.log("[afterChange] Changed from " + before + " to " + after);};
   var beforeSet = function(before, after) { console.log("[beforeSet] Setting from " + before + " to " + after)};

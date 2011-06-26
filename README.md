@@ -1,7 +1,7 @@
 Summary
 =======
 
-Publisher was inspired by a question: what if a programming language let variables follow the [publisher-subscriber](http://en.wikipedia.org/wiki/Publish/subscribe) design pattern?
+Publisher was inspired by a question: what if JavaScript let variables follow the [publisher-subscriber](http://en.wikipedia.org/wiki/Publish/subscribe) design pattern?
 
 The resulting project, Publisher, lets you hook in to variables with your own subscriber functions.  This allows your functions to take action before or after the variable is read, set, or changed.  It uses JavaScript getters and setters, and therefore won't work in older browsers. For best results, use Chrome or Firefox.
 
